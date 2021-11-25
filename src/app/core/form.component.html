@@ -1,0 +1,38 @@
+<form class="bg-dark text-white p-2" #form="ngForm" (ngSubmit)="submitForm(form)">
+    <div class="mb-3 row">
+        <label class="col-form-label col-4">SABOR</label>
+        <div class="col-8">
+            <select class="form-select" name="sabor" [(ngModel)]="caramelo.sabor" required>
+                <option selected value="" disabled>Elegir un sabor</option>
+                <option value="Fresa">Fresa</option>
+                <option value="Limón">Limón</option>
+                <option value="Naranja">Naranja</option>
+                <option value="Cocacola">Coca-cola</option>
+                <option value="Menta">Menta</option>
+                <option value="Sandia">Sandia</option>
+                <option value="Melon">Melon</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-form-label col-4">TEXTURA</label>
+        <div class="col-8">
+            <select class="form-select" name="textura" [(ngModel)]="caramelo.textura" required>
+                <option selected value="" disabled>Elegir una textura</option>
+                <option value="Gel dulce">Gel dulce</option>
+                <option value="Caramelo">Caramelo</option>
+                <option value="Regaliz">Regaliz</option>
+                <option value="En polvo">En polvo</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-form-label col-4">GRAMOS</label>
+        <div class="col-8">
+            <input  min="500" max="20000" placeholder="Entre 500 y 20000" class="form-control" name="gramos" [(ngModel)]="caramelo.gramos" required/>
+        </div>
+    </div>
+    <button class="btn btn-success w-100">Solicitar</button>
+</form>

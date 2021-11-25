@@ -1,0 +1,38 @@
+<table class="table table-dark table-hover table-sm table-bordered table-striped text-center">
+    <thead>
+        <tr>
+            <th>SABOR</th>
+            <th>TEXTURA</th>
+            <th>GRAMOS</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of getCaramelos() | envase : capacidad">
+            <td style="vertical-align:middle">{{item.sabor}}</td>
+            <td style="vertical-align:middle">{{item.textura}}</td>
+            <td style="vertical-align:middle">{{item.gramos}}</td>
+            <td class="text-center">
+                <button class="btn btn-danger btn-sm" (click)="deleteCaramelo(item.id)">
+                    Eliminar
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="mb-3 row bg-warning">
+    <label class="col-form-label col-4">ENVASE: </label>
+    <div class="col-8">
+        <select class="btn p-1 m-1 bg-success" [(ngModel)]="capacidad" style="width:auto;">
+            <!--<option value="" selected disabled>Elegir envase</option>-->
+            <option value="1000">Sobre</option>
+            <option value="2000">Caja</option>
+            <option value="20000">Contenedor</option>
+        </select>
+    </div>
+</div>
+
+
+
+
+
